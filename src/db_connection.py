@@ -1,7 +1,7 @@
 import psycopg2
 from config import config
 
-def connect():
+def postgresdb_connect(query='Select version()'):
     connection=None
     try:
         params=config()
@@ -20,7 +20,5 @@ def connect():
             connection.close()
             print('Db connection terminated')
 
-if __name__=="__main__":
-    connect()
-    
-    
+
+
